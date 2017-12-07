@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'normalize.css';
 import 'styles/index.scss';
 
 export default class AddMessage extends Component {

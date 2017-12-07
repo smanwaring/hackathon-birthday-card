@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import 'normalize.css';
 import 'styles/index.scss';
 
 export default class WhatForm extends Component {

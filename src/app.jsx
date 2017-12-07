@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation';
-import 'normalize.css';
 import 'styles/index.scss';
 
 export default class App extends Component {
