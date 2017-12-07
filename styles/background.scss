@@ -1,0 +1,24 @@
+.backgroundWrapper {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 33% 33% 33%;
+  justify-items: center;
+  grid-gap: 15px 15px;
+  grid-template-areas:
+    "background1 background2 background3"
+    "background4 background5 background6";
+}
+
+.backgroundWrapper div {
+  height: 100px;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.bkg1 {
+  grid-area: 'background1';
+}
+
+.bkg2 {
+  grid-area: 'background2';
+}

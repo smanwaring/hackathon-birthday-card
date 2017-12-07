@@ -6,13 +6,17 @@ import {
 import WhoForm from './components/WhoForm';
 import WhatForm from './components/WhatForm';
 import BackgroundForm from './components/BackgroundForm';
+import EditCard from './components/EditCard';
 import 'styles/index.scss';
 
 class Routes extends Component {
   state = {
     name: 'Peter',
     mainMessage: 'Happy Birthday',
-    personalMessages: []
+    personalMessages: [{
+      currentMessage: 'Sorry Stephanie ruined your birthday',
+      position: 'translate(120px, 200px)'
+    }]
   }
 
   updateState = (stateToUpdate) => {
@@ -31,6 +35,9 @@ class Routes extends Component {
         }/>
         <Route exact path="/backgrounds" render={routeProps =>
           <BackgroundForm {...this.state} {...routeProps} updateState={this.updateState} />
+        }/>
+        <Route exact path="/editCard" render={routeProps =>
+          <EditCard {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
       </div>
     </Router>

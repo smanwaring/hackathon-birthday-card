@@ -1,24 +1,30 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import 'normalize.css';
 import 'styles/index.scss';
 
 export default class WhatForm extends Component {
 
-  componentDidMount() {
-    this.props.updateState(
-      {
-        name: 'Stephanie'
-      }
-    );
+  handleButtonClick = () => {
+    this.props.updateState({
+      mainMessage: document.getElementById('celebration').value
+    })
   }
 
   render () {
-
     return (
-      <div className='App'>
+      <div>
+        <div>What are we celebrating:</div>
+        <select name="celebration" id="celebration">
+          <option value="Birthday">Birthday</option>
+          <option value="Get Well">Get Well</option>
+          <option value="Congratulations">Congratulations</option>
+          <option value="Condolences">Condolences</option>
+        </select>
         <div>
-          <h1>{this.props.name}</h1>
-          <p>{this.props.mainMessage}</p>
+          <Link to="/backgrounds">
+            <button onClick={this.handleButtonClick}>Next ></button>
+          </Link>
         </div>
       </div>
     );

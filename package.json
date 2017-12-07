@@ -22,6 +22,7 @@
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-draggable": "^3.0.4",
     "sass-loader": "^6.0.6"
   },
   "devDependencies": {
