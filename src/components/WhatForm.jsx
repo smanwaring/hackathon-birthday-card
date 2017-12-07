@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation';
 import 'normalize.css';
 import 'styles/index.scss';
 
-export default class App extends Component {
+export default class WhatForm extends Component {
 
   componentDidMount() {
     this.props.updateState(
@@ -17,7 +16,6 @@ export default class App extends Component {
 
     return (
       <div className='App'>
-        <Navigation/>
         <div>
           <h1>{this.props.name}</h1>
           <p>{this.props.mainMessage}</p>

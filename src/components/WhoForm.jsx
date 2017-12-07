@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Navigation from './components/Navigation';
 import 'normalize.css';
 import 'styles/index.scss';
 
-export default class App extends Component {
+export default class WhoForm extends Component {
 
   componentDidMount() {
     this.props.updateState(
@@ -14,14 +13,10 @@ export default class App extends Component {
   }
 
   render () {
-
     return (
-      <div className='App'>
-        <Navigation/>
-        <div>
-          <h1>{this.props.name}</h1>
-          <p>{this.props.mainMessage}</p>
-        </div>
+      <div>
+        <div>Tell us who you are making this for:</div>
+        <input id="who" type="text" placeholder="type name here"/>
       </div>
     );
   }

@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import App from './app';
-import About from './components/About';
-import Sample from './components/Sample';
+import WhoForm from './components/WhoForm';
+import WhatForm from './components/WhatForm';
+import BackgroundForm from './components/BackgroundForm';
 import 'styles/index.scss';
 
-const Routes = () => (
-  <Router>
-    <div>
-      <Route exact path="/" component={App}/>
-      <Route path="/about" component={About}/>
-      <Route path="/sample" component={Sample}/>
-    </div>
-  </Router>
-);
+class Routes extends Component {
+  state = {
+    name: 'Peter',
+    mainMessage: 'Happy Birthday',
+    personalMessages: []
+  }
+
+  updateState = (stateToUpdate) => {
+    this.setState(stateToUpdate)
+  }
+
+  render () {
+    return (
+    <Router>
+      <div className="appWrapper">
+        <Route exact path="/who" render={routeProps =>
+          <WhoForm {...this.state} {...routeProps} updateState={this.updateState} />
+        }/>
+        <Route exact path="/what" render={routeProps =>
+          <WhatForm {...this.state} {...routeProps} updateState={this.updateState} />
+        }/>
+        <Route exact path="/backgrounds" render={routeProps =>
+          <BackgroundForm {...this.state} {...routeProps} updateState={this.updateState} />
+        }/>
+      </div>
+    </Router>
+    );
+  }
+}
 
 export default Routes;
