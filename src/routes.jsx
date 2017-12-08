@@ -15,7 +15,8 @@ class Routes extends Component {
     mainMessage: 'Happy Birthday',
     personalMessages: [{
       currentMessage: 'Sorry Stephanie ruined your birthday',
-      position: 'translate(120px, 200px)'
+      // position: 'translate(120px, 200px)'
+      position: { x: 220, y: 300 }
     }]
   }
 
