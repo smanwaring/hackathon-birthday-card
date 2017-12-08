@@ -4,6 +4,11 @@
   left: 0;
 }
 
+.center {
+  margin: auto;
+  width: 50%;
+}
+
 .imageMessages {
   max-width: 300px;
   max-height: 300px;

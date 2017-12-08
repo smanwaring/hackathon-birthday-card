@@ -4,6 +4,7 @@ import AddMessage from './AddMessage'
 import AddImage from './AddImage'
 import PreviewMessage from './PreviewMessage'
 import PreviewImage from './PreviewImage'
+import button from '../../styles/common/button.css';
 import styles from '../../styles/editCard.css'
 
 class EditCard extends Component {
@@ -72,7 +73,9 @@ class EditCard extends Component {
           </div>
         </div>
 
-        <button onClick={this.toggleInput}>Toggle Input</button>
+        <div className={styles.center}>
+          <button className={button['fancy-button']} onClick={this.toggleInput}>Toggle</button>
+        </div>
         {this.renderInputOptions()}
 
         {personalMessages && personalMessages.map(message => (

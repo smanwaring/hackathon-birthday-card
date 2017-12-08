@@ -19,10 +19,7 @@ class Routes extends Component {
       // position: 'translate(120px, 200px)'
       position: { x: 220, y: 400 }
     }],
-    imageMessages: [{
-      src: "http://localhost:8888/2a8c16ba3bac31f0e39648de78e14406.gif",
-      position: { x: 350, y: 450 }
-    }],
+    imageMessages: [],
     background: ''
   }
 
