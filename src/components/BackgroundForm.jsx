@@ -16,9 +16,10 @@ export default class BackgroundForm extends Component {
 
   selectAsBackground = (e) => {
     let selected = document.querySelectorAll(this.selectedClass);
+    const className = this.selectedClassName;
 
     [].forEach.call(selected, function(el) {
-      el.classList.remove(this.selectedClassName);
+      el.classList.remove(className);
     });
 
     e.target.classList.add(this.selectedClassName)
