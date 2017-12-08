@@ -9,6 +9,7 @@ import BackgroundForm from './components/BackgroundForm';
 import EditCard from './components/EditCard';
 import styles from '../styles/who.css';
 import FromAllOfUs from './components/FromAllOfUs';
+import FinalCard from './components/FinalCard';
 
 class Routes extends Component {
   state = {
@@ -17,7 +18,7 @@ class Routes extends Component {
     personalMessages: [{
       currentMessage: 'Sorry Stephanie ruined your birthday',
       // position: 'translate(120px, 200px)'
-      position: { x: 220, y: 400 }
+      position: { x: 140, y: 620 }
     }],
     imageMessages: [],
     background: ''
@@ -43,6 +44,9 @@ class Routes extends Component {
         }/>
         <Route exact path="/editCard" render={routeProps =>
           <EditCard {...this.state} {...routeProps} updateState={this.updateState} />
+        }/>
+        <Route exact path="/happy-birthday-peter" render={routeProps =>
+          <FinalCard {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
       </div>
       </div>
