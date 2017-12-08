@@ -1,8 +1,12 @@
-.textBox {
-  height: 100px;
-  width: 500px;
+.center {
+  margin: auto;
+  width: 50%;
 }
 
 .currentMessage {
   display: inline-block;
+}
+
+.centerAgain {
+  text-align: center;
 }

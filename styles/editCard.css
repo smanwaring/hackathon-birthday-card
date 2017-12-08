@@ -5,7 +5,40 @@
 }
 
 .linkText {
-  display: inline;
+  display: inline-block;
   margin: 0 50px;
   text-align: center;
+  color: black;
+}
+
+.cupcake {
+  /* background-image: url('http://cdn.pcwallart.com/images/happy-birthday-cupcake-wallpaper-2.jpg');
+  height: 1000px;
+  width: 2000px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+
+.birthdayHeading {
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  width: 450px;
+  height: 400px;
+  background-color: #ece7e7;
+  border-radius: 5px;
+}
+
+.links {
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.linksBlue {
+  color:#3ea9da;
+  cursor: pointer;
+  margin-left: 10px;
+  text-decoration: underline;
 }

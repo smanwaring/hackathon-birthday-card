@@ -28,7 +28,6 @@ class Routes extends Component {
     return (
     <Router>
       <div>
-      <FromAllOfUs />
       <div>
         <Route exact path="/who" render={routeProps =>
           <WhoForm {...this.state} {...routeProps} updateState={this.updateState} />
