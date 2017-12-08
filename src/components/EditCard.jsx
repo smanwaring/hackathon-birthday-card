@@ -59,14 +59,17 @@ class EditCard extends Component {
   render() {
     const { personalMessages, imageMessages } = this.props;
     return(
-      <div>
-        <div>
-          <div>Link to Add Message</div>
-          <div>Link to Send to Peter</div>
-        </div>
-        <div>
-          <h1>{this.props.name}</h1>
-          <h1>{this.props.mainMessage}</h1>
+      <div className={styles.cupcake}>
+      <div className={styles.links}>
+        <div className={styles.linkText}>Pass this card around to others:<span className={styles.linksBlue}>bit.ly/Klu/f138 </span></div>
+        <div className={styles.linkText}>Send the final card:<span className={styles.linksBlue}>xoxo.Happy-Birthday-Peter/ </span></div>
+      </div>
+        <div className={styles.birthdayHeading}>
+        <div className={styles.birthdayTextBox}>
+            <h1>{this.props.mainMessage}</h1>
+            <h1>{this.props.name}!</h1>
+            <p>xoxo, your friends and family at XO Group</p>
+          </div>
         </div>
 
         <button onClick={this.toggleInput}>Toggle Input</button>

@@ -7,7 +7,8 @@ import WhoForm from './components/WhoForm';
 import WhatForm from './components/WhatForm';
 import BackgroundForm from './components/BackgroundForm';
 import EditCard from './components/EditCard';
-import 'styles/index.css';
+import styles from '../styles/who.css';
+import FromAllOfUs from './components/FromAllOfUs';
 
 class Routes extends Component {
   state = {
@@ -21,7 +22,8 @@ class Routes extends Component {
     imageMessages: [{
       src: "http://localhost:8888/2a8c16ba3bac31f0e39648de78e14406.gif",
       position: { x: 350, y: 450 }
-    }]
+    }],
+    background: ''
   }
 
   updateState = (stateToUpdate) => {
@@ -31,7 +33,8 @@ class Routes extends Component {
   render () {
     return (
     <Router>
-      <div className="appWrapper">
+      <div>
+      <div>
         <Route exact path="/who" render={routeProps =>
           <WhoForm {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
@@ -44,6 +47,7 @@ class Routes extends Component {
         <Route exact path="/editCard" render={routeProps =>
           <EditCard {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
+      </div>
       </div>
     </Router>
     );

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import 'styles/index.css';
-
+import button from '../../styles/common/button.css';
+import styles from '../../styles/who.css';
+import { Field, Dropdown, FieldGroup, FormTheme, DropdownItem } from '@xo-union/tk-component-fields';
 export default class WhatForm extends Component {
 
   handleButtonClick = () => {
@@ -12,17 +13,21 @@ export default class WhatForm extends Component {
 
   render () {
     return (
-      <div>
-        <div>What are we celebrating:</div>
-        <select name="celebration" id="celebration">
-          <option value="Birthday">Birthday</option>
-          <option value="Get Well">Get Well</option>
-          <option value="Congratulations">Congratulations</option>
-          <option value="Condolences">Condolences</option>
-        </select>
+      <div className={styles.appWrapper}>
+        <div className={styles.question}>What are we celebrating:</div>
+        <FormTheme>
+          <FieldGroup>
+            <Dropdown id="celebration" name="Occassion">
+              <DropdownItem label="Birthday" />
+              <DropdownItem label="Congrats" />
+              <DropdownItem label="Get Well" />
+              <DropdownItem label="I'm sorry your dog died" />
+            </Dropdown>
+            </FieldGroup>
+        </FormTheme>
         <div>
           <Link to="/backgrounds">
-            <button onClick={this.handleButtonClick}>Next ></button>
+            <button className={button['fancy-button']} onClick={this.handleButtonClick}>Next ></button>
           </Link>
         </div>
       </div>

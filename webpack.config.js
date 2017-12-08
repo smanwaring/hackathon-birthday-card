@@ -124,7 +124,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin({
       filename: 'style.css',
-      allChunks: true
+      allChunks: true,
+      ignoreOrder: true
     }),
     new DashboardPlugin(),
     new HtmlWebpackPlugin({
