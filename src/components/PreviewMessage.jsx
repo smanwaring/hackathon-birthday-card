@@ -7,7 +7,6 @@ class PreviewMessage extends Component {
   }
 
   componentWillUnMount = () => {
-    console.log('component umounting')
     this.setState({ defaultPosition: { x: 0, y: 0 } })
   }
 

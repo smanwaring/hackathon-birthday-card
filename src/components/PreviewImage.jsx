@@ -6,6 +6,7 @@ class PreviewImage extends Component {
   state = {
     defaultPosition: { x: 0, y: 0 },
     isDone: false,
+    isDisabled: false,
   }
 
   recordPosition = (e) => {
@@ -16,6 +17,7 @@ class PreviewImage extends Component {
   saveImage = () => {
     const message = window.document.getElementById('image_message').value
     this.setState({ isDone: true, message: message })
+    this.props.saveImageMessage()
   }
 
   renderWhat = () => {
@@ -28,6 +30,7 @@ class PreviewImage extends Component {
       <Draggable
         defaultPosition={this.state.defaultPosition}
         onStop={this.recordPosition}
+        disabled={this.state.isDone}
         cancel='span'
         >
           <div className={styles.imageCard}>

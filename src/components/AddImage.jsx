@@ -4,23 +4,23 @@ import styles from '../../styles/addImage.css'
 
 export default class AddImage extends Component {
   state = {
-    images: []
+    images: [],
   }
 
   addImage = (e) => {
     this.setState({
-      images: [...this.state.images, <PreviewImage src={e.target.src} />]
+      images: [...this.state.images, <PreviewImage saveImageMessage={this.saveImageMessage} src={e.target.src} />]
     })
   }
 
-  componentWillUnmount = () => {
+  saveImageMessage = () => {
     this.props.finalizeImages(this.state.images)
   }
 
   render () {
     return (
       <div className={styles.imageWrapper}>
-        <div>
+        <div className={styles.optionsWrapper}>
           <img onClick={this.addImage} src={require('../../assets/congrats.gif')} />
           <img onClick={this.addImage} src={require('../../assets/birthday_cupcake.png')} />
         </div>

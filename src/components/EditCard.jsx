@@ -9,20 +9,20 @@ import styles from '../../styles/editCard.css'
 class EditCard extends Component {
   componentWillMount() {
     this.setState({
-      message: {
-        currentMessage: '',
-        position: { x: 0, y: 219 },
-      },
+      currentMessage: '',
+      position: { x: 0, y: 219 },
       showPreview: true,
       inputWhat: 'text'
     });
   }
 
   handleButtonClick = () => {
+    const message = { currentMessage: this.state.currentMessage, position: this.state.position }
     this.props.updateState({
-      personalMessages: [ ...this.props.personalMessages, this.state.message ]
+      personalMessages: [ ...this.props.personalMessages, message ]
     })
     this.setState({
+      currentMessage: '',
       showPreview: false,
     })
     document.getElementById('friendMessage').value = ''
@@ -30,17 +30,22 @@ class EditCard extends Component {
 
   recordPosition = (e) => {
     const { x, y } = e
-    this.setState({ message: { position: { x, y } } });
+    this.setState({ position: { x, y } });
   }
 
   updateCurrentMessage = (msg) => {
-    this.setState({ message: { currentMessage: msg }, showPreview: true });
+    this.setState({ currentMessage: msg, showPreview: true });
   }
 
   finalizeImages = (images) => {
     this.props.updateState({
       imageMessages: [ ...this.props.imageMessages, ...images ]
     })
+  }
+
+  toggleInput = () => {
+    const what = (this.state.inputWhat === 'text')? 'image' : 'text'
+    this.setState({ inputWhat: what  })
   }
 
   renderInputOptions = () => {
@@ -64,6 +69,7 @@ class EditCard extends Component {
           <h1>{this.props.mainMessage}</h1>
         </div>
 
+        <button onClick={this.toggleInput}>Toggle Input</button>
         {this.renderInputOptions()}
 
         {personalMessages && personalMessages.map(message => (
@@ -78,7 +84,7 @@ class EditCard extends Component {
           </div>
         ))}
         {imageMessages.map(img => (
-          <div key={Math.round(Math.random() * 100000)}>
+          <div className={styles.positioned} key={Math.round(Math.random() * 100000)}>
           <Draggable
             defaultPosition={{x: 0, y: 0}}
             position={img.position}
