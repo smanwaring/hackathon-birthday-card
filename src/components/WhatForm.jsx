@@ -13,7 +13,7 @@ export default class WhatForm extends Component {
 
   render () {
     return (
-      <div>
+      <div className={styles.appWrapper}>
         <div className={styles.question}>What are we celebrating:</div>
         <FormTheme>
           <FieldGroup>

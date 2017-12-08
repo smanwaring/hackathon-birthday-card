@@ -29,8 +29,7 @@ class Routes extends Component {
     return (
     <Router>
       <div>
-      <FromAllOfUs />
-      <div className={styles['appWrapper']}>
+      <div>
         <Route exact path="/who" render={routeProps =>
           <WhoForm {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
