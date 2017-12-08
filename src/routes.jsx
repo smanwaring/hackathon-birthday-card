@@ -7,7 +7,7 @@ import WhoForm from './components/WhoForm';
 import WhatForm from './components/WhatForm';
 import BackgroundForm from './components/BackgroundForm';
 import EditCard from './components/EditCard';
-import 'styles/index.scss';
+import 'styles/index.css';
 
 class Routes extends Component {
   state = {

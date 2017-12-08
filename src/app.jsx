@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation';
-import 'styles/index.scss';
+import 'styles/index.css';
 
 export default class App extends Component {
 

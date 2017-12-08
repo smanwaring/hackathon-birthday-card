@@ -10,7 +10,7 @@ const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
 
 loaders.push({
-  test: /\.scss$/,
+  test: /\.s?css$/,
   loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
   exclude: ['node_modules']
 });
@@ -34,7 +34,7 @@ module.exports = {
       {
         /* @property issuer Must be specified when using the ExtractTextPlugin  */
         issuer: /\.jsx?$/,
-        test: /\.cssm?$/,
+        test: /\.s?cssm?$/,
         /**
          * Tell ExtractTextPlugin to extract css contents from Union css modules
          */
@@ -49,7 +49,7 @@ module.exports = {
         loader: "babel-loader"
       },
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: {
           loader: 'a-css-loader',
           options: {

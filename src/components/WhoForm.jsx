@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import 'styles/index.scss';
 
 export default class WhoForm extends Component {
 
@@ -8,8 +7,6 @@ export default class WhoForm extends Component {
     this.props.updateState({
       name: window.document.getElementById('who').value
     });
-
-    //this.props.history.push('/what');
   }
 
   render () {

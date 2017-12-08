@@ -18,7 +18,7 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
-    "@xo-union/tk-css-breakpoints": "^1.0.0",
+    "@xo-union/tk-css-breakpoints": "^0.1.1",
     "@xo-union/tk-css-essentials": "^1.0.0",
     "@xo-union/tk-css-typography": "^1.0.4",
     "node-sass": "^4.7.2",

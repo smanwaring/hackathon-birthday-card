@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Draggable from 'react-draggable'
 import AddMessage from './AddMessage'
-import 'styles/index.scss';
+import 'styles/index.css';
 
 class EditCard extends Component {
   componentWillMount() {
