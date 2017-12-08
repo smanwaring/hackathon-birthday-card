@@ -3,14 +3,16 @@ import Draggable from 'react-draggable'
 import AddMessage from './AddMessage'
 import AddImage from './AddImage'
 import PreviewMessage from './PreviewMessage'
+import PreviewImage from './PreviewImage'
 import styles from '../../styles/editCard.css'
 
 class EditCard extends Component {
   componentWillMount() {
     this.setState({
-      currentMessage: '',
-      position: { x: 0, y: 219 },
-      images: [],
+      message: {
+        currentMessage: '',
+        position: { x: 0, y: 219 },
+      },
       showPreview: true,
       inputWhat: 'text'
     });
@@ -18,7 +20,7 @@ class EditCard extends Component {
 
   handleButtonClick = () => {
     this.props.updateState({
-      personalMessages: [ ...this.props.personalMessages, this.state ]
+      personalMessages: [ ...this.props.personalMessages, this.state.message ]
     })
     this.setState({
       showPreview: false,
@@ -28,19 +30,21 @@ class EditCard extends Component {
 
   recordPosition = (e) => {
     const { x, y } = e
-    this.setState({ position: { x, y } });
+    this.setState({ message: { position: { x, y } } });
   }
 
   updateCurrentMessage = (msg) => {
-    this.setState({ currentMessage: msg, showPreview: true });
+    this.setState({ message: { currentMessage: msg }, showPreview: true });
   }
 
-  updateImage = (img) => {
-    this.setState({ images: [...this.state.images, img] })
+  finalizeImages = (images) => {
+    this.props.updateState({
+      imageMessages: [ ...this.props.imageMessages, ...images ]
+    })
   }
 
   renderInputOptions = () => {
-    return (true) ? <AddMessage finalizeState={this.handleButtonClick} updateMessage={this.updateCurrentMessage} /> : <AddImage updateImage={this.updateImage} />
+    return (this.state.inputWhat == 'text') ? <AddMessage finalizeState={this.handleButtonClick} updateMessage={this.updateCurrentMessage} /> : <AddImage updateImage={this.updateImage} finalizeImages={this.finalizeImages} />
   }
 
   renderPreview = () => {
@@ -48,7 +52,7 @@ class EditCard extends Component {
   }
 
   render() {
-    const { personalMessages } = this.props;
+    const { personalMessages, imageMessages } = this.props;
     return(
       <div>
         <div>
@@ -73,7 +77,17 @@ class EditCard extends Component {
             </Draggable>
           </div>
         ))}
-        {this.state.images.map(img => img)}
+        {imageMessages.map(img => (
+          <div key={Math.round(Math.random() * 100000)}>
+          <Draggable
+            defaultPosition={{x: 0, y: 0}}
+            position={img.position}
+            disabled={true}
+            >
+            <img className={styles.imageMessages} src={img.src} />
+          </Draggable>
+          </div>
+        ))}
         {this.renderPreview()}
       </div>
     )

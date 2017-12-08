@@ -3,3 +3,8 @@
   top: 0;
   left: 0;
 }
+
+.imageMessages {
+  max-width: 300px;
+  max-height: 300px;
+}
