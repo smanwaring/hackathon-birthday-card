@@ -17,7 +17,8 @@ class Routes extends Component {
     personalMessages: [{
       currentMessage: 'Sorry Stephanie ruined your birthday',
       position: 'translate(120px, 200px)'
-    }]
+    }],
+    background: ''
   }
 
   updateState = (stateToUpdate) => {
