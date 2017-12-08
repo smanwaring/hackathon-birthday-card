@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
 import Routes from './routes'
 import '@xo-union/tk-css-essentials';
+import { init } from '@xo-union/tk-component-icons/lib//assets/setup';
+
+init();
 
 ReactDOM.render(
   <AppContainer>

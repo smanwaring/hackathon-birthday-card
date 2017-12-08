@@ -7,7 +7,8 @@ import WhoForm from './components/WhoForm';
 import WhatForm from './components/WhatForm';
 import BackgroundForm from './components/BackgroundForm';
 import EditCard from './components/EditCard';
-import 'styles/index.css';
+import styles from '../styles/who.css';
+import FromAllOfUs from './components/FromAllOfUs';
 
 class Routes extends Component {
   state = {
@@ -26,7 +27,9 @@ class Routes extends Component {
   render () {
     return (
     <Router>
-      <div className="appWrapper">
+      <div>
+      <FromAllOfUs />
+      <div className={styles['appWrapper']}>
         <Route exact path="/who" render={routeProps =>
           <WhoForm {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
@@ -39,6 +42,7 @@ class Routes extends Component {
         <Route exact path="/editCard" render={routeProps =>
           <EditCard {...this.state} {...routeProps} updateState={this.updateState} />
         }/>
+      </div>
       </div>
     </Router>
     );
