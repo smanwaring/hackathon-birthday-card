@@ -3,3 +3,9 @@
   top: 0;
   left: 0;
 }
+
+.linkText {
+  display: inline;
+  margin: 0 50px;
+  text-align: center;
+}

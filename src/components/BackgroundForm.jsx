@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import 'styles/index.css';
+import styles from '../../styles/who.css';
+import button from '../../styles/common/button.css';
 
 export default class BackgroundForm extends Component {
   render () {
     return (
-      <div>
+      <div className={styles.appWrapper}>
         <div>Pick a background:</div>
         <div className='backgroundWrapper'>
           <div className='bgk1'>sparkles</div>
@@ -15,7 +16,7 @@ export default class BackgroundForm extends Component {
           <div className='bgk5'>dogs</div>
           <div className='bgk6'>goldfish</div>
         </div>
-        <Link to='/editCard'><button>Create My Card</button></Link>
+        <Link to='/editCard'><button className={button['fancy-button']}>Create</button></Link>
       </div>
     );
   }

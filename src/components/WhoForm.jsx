@@ -15,7 +15,7 @@ export default class WhoForm extends Component {
 
   render () {
     return (
-      <div>
+      <div className={styles.appWrapper}>
         <div className={styles.question}>Who are you making this for?</div>
         <FormTheme>
            <Field id="who" name="who" />

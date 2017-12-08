@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Draggable from 'react-draggable'
 import AddMessage from './AddMessage'
-import 'styles/index.css';
+import styles from '../../styles/editCard.css';
 
 class EditCard extends Component {
   componentWillMount() {
@@ -30,10 +30,8 @@ class EditCard extends Component {
     const { personalMessages } = this.props;
     return(
       <div>
-        <div>
-          <div>Link to Add Message</div>
-          <div>Link to Send to Peter</div>
-        </div>
+          <div className={styles.linkText}>Pass this card around to others: </div>
+          <div className={styles.linkText}>Send the final card: </div>
         <div>
           <h1>{this.props.name}</h1>
           <h1>{this.props.mainMessage}</h1>
