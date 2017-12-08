@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import styles from '../../styles/who.css';
+import styles from '../../styles/background.css';
 import button from '../../styles/common/button.css';
 
 
@@ -48,7 +48,7 @@ export default class BackgroundForm extends Component {
           <div data-bg="bgk5" onClick={this.selectAsBackground} className={styles['bgk5']}>dogs</div>
           <div data-bg="bgk6" onClick={this.selectAsBackground} className={styles['bgk6']}>goldfish</div>
         </div>
-        <Link className={button['fancy-button']} onClick={this.setAsBackground} to='/editCard'><button>Create My Card</button></Link>
+        <Link onClick={this.setAsBackground} to='/editCard'><button className={button['fancy-button']} >Create</button></Link>
       </div>
     );
   }

@@ -28,6 +28,11 @@
   height: 400px;
   background-color: #ece7e7;
   border-radius: 5px;
+  /* background-image: url('http://cdn.pcwallart.com/images/happy-birthday-cupcake-wallpaper-2.jpg'); */
+  background-image: url('https://c1.staticflickr.com/5/4088/5222849896_802c5f0754_b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .links {
@@ -41,4 +46,14 @@
   cursor: pointer;
   margin-left: 10px;
   text-decoration: underline;
+}
+
+.birthdayTextBox {
+  background-color: white;
+  color: black;
+  width: 320px;
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+  padding: 10px 0;
 }
